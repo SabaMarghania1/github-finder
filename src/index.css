@@ -237,6 +237,10 @@ form img {
   color: var(--info);
 }
 
+input {
+  color: var(--input-text);
+}
+
 @media screen and (min-width: 1024px) {
   #root {
     width: calc(100% - 188px);

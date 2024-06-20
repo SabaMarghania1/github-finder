@@ -1,10 +1,16 @@
+import {useEffect} from 'react';
 import SearchImage from '../assets/icon-search.svg';
 
-export default function Form() {
+export default function Form({query, setQuery, handleSubmit}) {
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <img src={SearchImage} alt="Search Icon" />
-      <input type="text" placeholder="Search Github username..." />
+      <input
+        type="text"
+        placeholder="Search Github username..."
+        value={query}
+        onChange={e => setQuery(e.target.value)}
+      />
       <button type="submit">Search</button>
     </form>
   );

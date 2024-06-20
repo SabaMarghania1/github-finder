@@ -41,10 +41,18 @@ function App() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState('');
   const [theme, setTheme] = useState(getInitialTheme);
+  const [query, setQuery] = useState('');
 
   useEffect(() => {
     fetchUserData('octocat', setUser, setError);
   }, []);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    fetchUserData(query, setUser, setError);
+    setQuery('');
+  }
 
   const {
     name,
@@ -63,9 +71,9 @@ function App() {
 
   return (
     <>
-      <Header theme={theme} setTheme={setTheme} />
+      <Header theme={theme} setTheme={setTheme} setUser={setUser} />
       <Main>
-        <Form />
+        <Form query={query} setQuery={setQuery} handleSubmit={handleSubmit} />
         <Results>
           <Descriptions>
             <Top avatar={avatar} name={name} username={username} date={date} />
