@@ -1,8 +1,8 @@
-export default function Info({info, logo, theme}) {
+export default function Info({info, logo}) {
   return (
-    <div className="info-box">
-      <span className="info-logo">{logo}</span>
-      <p className="info">{info}</p>
+    <div style={!info ? {opacity: 0.5} : {}} className="info-box">
+      <img src={logo} alt="Logo" className="light" />
+      <p className="info">{info || 'Not Available'}</p>
     </div>
   );
 }
