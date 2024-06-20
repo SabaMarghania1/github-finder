@@ -1,10 +1,10 @@
 import ThemeChanger from './ThemeChanger';
 
-export default function Header() {
+export default function Header({theme, setTheme}) {
   return (
     <header className="header">
       <p>devfinder</p>
-      <ThemeChanger />
+      <ThemeChanger theme={theme} setTheme={setTheme} />
     </header>
   );
 }

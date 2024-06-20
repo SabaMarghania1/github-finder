@@ -2,15 +2,7 @@ import {useEffect, useState} from 'react';
 import Moon from '../assets/icon-moon.svg';
 import Sun from '../assets/icon-sun.svg';
 
-const ThemeChanger = () => {
-  const getInitialTheme = () => {
-    const savedTheme = localStorage.getItem('theme');
-    return (
-      savedTheme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-    );
-  };
-
-  const [theme, setTheme] = useState(getInitialTheme);
+const ThemeChanger = ({setTheme, theme}) => {
   const handleMediaChange = e => {
     setTheme(e.matches ? 'dark' : 'light');
   };
