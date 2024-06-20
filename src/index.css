@@ -229,7 +229,6 @@ form img {
   display: flex;
   gap: 13px;
   align-items: center;
-  width: 100%;
 }
 
 .info {
@@ -241,13 +240,107 @@ input {
   color: var(--input-text);
 }
 
-@media screen and (min-width: 1024px) {
+.error {
+  display: none;
+  color: red;
+  font-size: 13px;
+}
+@media screen and (min-width: 768px) {
   #root {
     width: calc(100% - 188px);
   }
 
   .header {
     margin-top: 140px;
+    margin-bottom: 35px;
+  }
+
+  form {
+    margin-bottom: 24px;
+  }
+
+  form img {
+    left: 32px;
+  }
+
+  .main form input {
+    padding: 22px 80px;
+    font-size: 18px;
+  }
+
+  .main form button {
+    width: 106px;
+  }
+
+  .avatar {
+    width: 117px;
+    height: 117px;
+  }
+
+  .results {
+    padding: 40px 40px 44px;
+    gap: 32px;
+  }
+
+  .top {
+    gap: 41px;
+    align-items: center;
+  }
+
+  .user {
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  .username {
+    font-size: 16px;
+  }
+  .date {
+    font-size: 15px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 25px;
+  }
+
+  .statistics {
+    padding: 15px 136px 17px 32px;
+    gap: 99px;
+    justify-content: flex-start;
+  }
+  .stats-box {
+    text-align: start;
+  }
+  .stat-name {
+    font-size: 13px;
+  }
+  .stat {
+    font-size: 22px;
+  }
+  .infos {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start;
+    gap: 19px 60px;
+  }
+
+  .info-box {
+    align-items: space-between;
+    gap: 20px;
+  }
+
+  .info {
+    font-size: 15px;
+  }
+
+  .error {
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    right: 120px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -255,7 +348,6 @@ input {
   #root {
     display: flex;
     flex-direction: column;
-
     justify-content: center;
   }
 

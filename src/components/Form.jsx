@@ -1,7 +1,6 @@
-import {useEffect} from 'react';
 import SearchImage from '../assets/icon-search.svg';
 
-export default function Form({query, setQuery, handleSubmit}) {
+export default function Form({query, setQuery, handleSubmit, error}) {
   return (
     <form onSubmit={handleSubmit}>
       <img src={SearchImage} alt="Search Icon" />
@@ -11,6 +10,7 @@ export default function Form({query, setQuery, handleSubmit}) {
         value={query}
         onChange={e => setQuery(e.target.value)}
       />
+      {error && <p className="error">{error}</p>}
       <button type="submit">Search</button>
     </form>
   );

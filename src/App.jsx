@@ -49,7 +49,6 @@ function App() {
 
   function handleSubmit(e) {
     e.preventDefault();
-
     fetchUserData(query, setUser, setError);
     setQuery('');
   }
@@ -73,7 +72,7 @@ function App() {
     <>
       <Header theme={theme} setTheme={setTheme} setUser={setUser} />
       <Main>
-        <Form query={query} setQuery={setQuery} handleSubmit={handleSubmit} />
+        <Form query={query} setQuery={setQuery} handleSubmit={handleSubmit} error={error} />
         <Results>
           <Descriptions>
             <Top avatar={avatar} name={name} username={username} date={date} />
