@@ -46,6 +46,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.5s ease;
 }
 
 #root {
@@ -130,6 +131,7 @@ form img {
   background-color: var(--secondary-bg);
   border: none;
   border-radius: 15px;
+  box-shadow: var(--shadow);
 }
 
 /* Desciprtion */
@@ -245,6 +247,7 @@ input {
   color: red;
   font-size: 13px;
 }
+
 @media screen and (min-width: 768px) {
   #root {
     width: calc(100% - 188px);
@@ -270,6 +273,10 @@ input {
 
   .main form button {
     width: 106px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #60abff;
   }
 
   .avatar {
@@ -277,6 +284,10 @@ input {
     height: 117px;
   }
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   .results {
     padding: 40px 40px 44px;
     gap: 32px;
@@ -344,14 +355,37 @@ input {
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1240px) {
   #root {
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 
   .header {
-    margin-top: 0px;
+    margin-top: 144px;
+  }
+
+  .results {
+    padding: 44px 48px 48px 200px;
+  }
+
+  .top {
+    margin-left: -155px;
+    align-items: flex-start;
+  }
+
+  .user-info {
+    width: 100%;
+    flex-direction: row;
+    align-items: first baseline;
+    justify-content: space-between;
+  }
+
+  .descriptions {
+    gap: 0px;
+  }
+
+  .description {
+    margin-top: -40px;
   }
 }
